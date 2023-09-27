@@ -1,0 +1,183 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="100" id="navbar-top">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" [routerLink]="['/home']" placement="bottom">
+                <span> CARBOOK• </span>
+            </a>
+            <button aria-controls="navigation-index" aria-label="Toggle navigation"
+                class="navbar-toggler navbar-toggler" [attr.aria-expanded]="!isCollapsed"
+                (click)="isCollapsed = !isCollapsed" id="navigation" type="button">
+                <span class="navbar-toggler-bar bar1"> </span>
+                <span class="navbar-toggler-bar bar2"> </span>
+                <span class="navbar-toggler-bar bar3"> </span>
+            </button>
+        </div>
+        <div class="navbar-collapse justify-content-end" [collapse]="isCollapsed" id="navigation">
+            <div class="navbar-collapse-header">
+                <div class="row">
+                    <div class="col-6 collapse-brand"><a> CARBOOK• </a></div>
+                    <div class="col-6 collapse-close text-right">
+                        <button aria-controls="navigation-index" aria-label="Toggle navigation" class="navbar-toggler"
+                            [attr.aria-expanded]="!isCollapsed" (click)="isCollapsed = !isCollapsed" id="navigation"
+                            type="button">
+                            <i class="tim-icons icon-simple-remove"> </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/cars']"> Cars </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/pricing']"> Pricing </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/car-reservations']">
+                        Reservations
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home']"> Back to Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://www.virtusa.com/">
+                        Have an issue?
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="wrapper">
+    <div class="section" style="padding-top: 140px; padding-bottom: 7px">
+        <div class="container">
+            <div class="row row-grid justify-content-between align-items-center text-left">
+                <div class="col-lg-12 col-md-5">
+                    <h1 class="text-white">Reservations <br /></h1>
+                    <p class="text-white mb-3">
+                        Discover the list of reservations made by the customers..
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="padding-top: 10px;">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <table class="table table-responsive-sm table-hover table-outline mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Reservation ID</th>
+                            <th>Start Date</th>
+                            <th>End Date</th>
+                            <th>Status</th>
+                            <th>Quantity</th>
+                            <th class="text-right">Total Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let list of carReservations">
+                            <td class="text-center">{{ list?.id }}</td>
+                            <td>{{ momentParser(list?.startDate).utc().format("DD/MM/YYYY HH:mm A") }}</td>
+                            <td>{{ momentParser(list?.endDate).utc().format("DD/MM/YYYY HH:mm A") }}</td>
+                            <td>{{ list?.reservationStatus }}</td>
+                            <td>{{ list?.carQuantity }}</td>
+                            <td class="text-right">$ {{ list?.totalCost.toFixed(2) }}</td>
+                            <td class="td-actions">
+                                <button style="margin-right: 10px;" type="button" placement="top"
+                                    tooltip="Make a Payment" class="btn btn-success btn-round btn-sm btn-icon">
+                                    <i class="tim-icons icon-check-2"></i>
+                                </button>
+                                <button type="button" placement="top" tooltip="Cancel"
+                                    class="btn btn-danger btn-round btn-sm btn-icon" data-target="#cancelModel"
+                                    (click)="selectReservationForCancellation(list.id); cancelModel.show()">
+                                    <i class="tim-icons icon-simple-remove"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <!-- Model -->
+    <div aria-hidden="true" aria-labelledby="myModalLabel" bsModal class="modal fade modal-mini modal-neutral modal-mini" #cancelModel="bs-modal" id="cancelModel"
+        role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p><strong>Are you sure to cancel the reservation?</strong></p>
+                </div>
+                <div class="modal-footer" style="align-self: center;">
+                    <div class="row">
+
+                        <button class="btn btn-success" style="margin-right: 10px;" type="button" (click)="cancelReservation(selectedReservationId); cancelModel.hide()">Yes</button>
+                        <button class="btn btn-danger" data-dismiss="modal" type="button" (click)="cancelModel.hide()">
+                            No
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ... -->
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h1 class="title">CARBOOK•</h1>
+                </div>
+                <div class="col-md-3">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/home']"> Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/cars']"> Cars </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/pricing']">
+                                Pricing
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [routerLink]="['/car-reservation']">
+                                Reservations
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.virtusa.com/">
+                                Contact Us
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.virtusa.com/"> About Us </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h3 class="title">Follow us:</h3>
+                    <div class="btn-wrapper profile">
+                        <a class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+                            href="https://twitter.com/VirtusaCorp" target="_blank">
+                            <i class="fab fa-twitter"> </i>
+                        </a>
+                        <a class="btn btn-icon btn-neutral btn-round btn-simple mr-1"
+                            href="https://www.facebook.com/LifeAtVirtusaSriLanka/" target="_blank">
+                            <i class="fab fa-facebook-square"> </i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
