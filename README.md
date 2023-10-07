@@ -315,6 +315,7 @@ Note: It will generate dist file for you and inside `dist/car-booking-app` conta
   ```
 
 - Step 5 – Now run the following commands to run your jar files.
+
   ```bash
   nohup java -Xms256m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof -jar /home/ubuntu/Lab_App/Services/discovery-service/discovery-service-0.0.1-SNAPSHOT.jar > discovery-service.log 2>&1 &
   nohup java -Xms256m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof -jar /home/ubuntu/Lab_App/Services/api-gateway/api-gateway-0.0.1-SNAPSHOT.jar > api-gateway.log 2>&1 &
