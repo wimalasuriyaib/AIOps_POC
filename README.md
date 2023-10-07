@@ -202,10 +202,10 @@ It will create following directory
 
 Inside it you will find following sub directories:
 
-•	aiops-hackathon-client
-•	aiops-hackathon-services
-•	architecture-documents
-•	database
+- aiops-hackathon-client
+- aiops-hackathon-services
+- architecture-documents
+- database
 
 #### Frontend
 
@@ -225,13 +225,13 @@ If you’d like to build the application from scratch, you will follow the instr
 - Step 2 – Before deploying the frontend application there are few things to change in following files:
 
 1.	aiops-hackathon-client\src\index.html
-<base href="/" /> change to   <base href="/demo/" />
+`<base href="/" /> change to   <base href="/demo/" />`
 
 2.	aiops-hackathon-client\src\environments\environment.prod.ts
-baseUrl: 'http://<your-ec2-public-ip>:9004'
+`baseUrl: 'http://<your-ec2-public-ip>:9004'`
 
 3.	aiops-hackathon-client\src\proxy.conf.json
-"target": "http:// <your-ec2-public-ip>:9004"
+`"target": "http:// <your-ec2-public-ip>:9004"`
 
 - Step 3 – Build with the following command.
   ```bash
