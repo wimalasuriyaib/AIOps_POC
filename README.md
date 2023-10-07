@@ -171,11 +171,8 @@ Step 3: Connect to EC2 Instance
 
   ```bash
   SELECT user, host FROM mysql.user;
-
   UPDATE mysql.user SET Host = '%' WHERE User = localhost;
-
   GRANT ALL PRIVILEGES ON *.* TO ‘root’@’%’ GRANT OPTION;
-
   FLUSH PRIVILEGES;
   ```
 
@@ -249,13 +246,9 @@ Note: It will generate dist file for you and inside `dist/car-booking-app` conta
 - Step 1 – Let’s create directories as follows:
   ```bash
   /home/ubuntu/Lab_App/Services/discovery-service
-
   /home/ubuntu/Lab_App/Services/api-gateway
-
   /home/ubuntu/Lab_App/Services/location-service
-
   /home/ubuntu/Lab_App/Services/car-service
-
   /home/ubuntu/Lab_App/Services/reservation-service
   ```
 
@@ -263,13 +256,9 @@ Note: It will generate dist file for you and inside `dist/car-booking-app` conta
 
   ```bash
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/aiops-hackathon/discovery-service/target/discovery-service-0.0.1-SNAPSHOT.jar /home/ubuntu/Lab_App/Services/discovery-service
-
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/api-gateway/target/api-gateway-0.0.1-SNAPSHOT.jar /home/ubuntu/Lab_App/Services/api-gateway
-
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/location-service/target/location-service-0.0.1-SNAPSHOT.jar /home/ubuntu/Lab_App/Services/location-service
-
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/car-service/target/car-service-0.0.1-SNAPSHOT.jar /home/ubuntu/Lab_App/Services/car-service
-
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/reservation-service/target/reservation-service-0.0.1-SNAPSHOT.jar /home/ubuntu/Lab_App/Services/reservation-service
   ```
 
@@ -278,63 +267,59 @@ Note: It will generate dist file for you and inside `dist/car-booking-app` conta
 
   ```bash
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/discovery-service/src/main/resources/application.properties /home/ubuntu/Lab_App/Services/discovery-service
-
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/api-gateway/src/main/resources/application.properties /home/ubuntu/Lab_App/Services/api-gateway
-
-
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/location-service/src/main/resources/application.properties /home/ubuntu/Lab_App/Services/location-service
-
-
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/car-service/src/main/resources/application.properties /home/ubuntu/Lab_App/Services/car-service
-
-
   cp /home/ubuntu/AIOPs_Hackathon_Lab_Application/aiops-hackathon-services/reservation-service/src/main/resources/application.properties /home/ubuntu/Lab_App/Services/reservation-service
   ```
 
 - Step 4 – Once you copied the following changes you have to do it in application.properties file by navigating to each directory
 
 1.	/home/ubuntu/Lab_App/Services/discovery-service/application.properties
-eureka.instance.hostname=<your-ec2-instance-ip>
+  ```bash
+  eureka.instance.hostname=<your-ec2-instance-ip>
+  ```
 
 2.	/home/ubuntu/Lab_App/Services/api-gateway/application.properties
-eureka.instance.client.serviceUrl.defaultZone=http:// <your-ec2-instance-ip>:8761/eureka/
-spring.cloud.gateway.routes[0].uri=http:// <your-ec2-instance-ip>:9001
-spring.cloud.gateway.routes[1].uri=http:// <your-ec2-instance-ip>:9003
-spring.cloud.gateway.routes[2].uri=http:// <your-ec2-instance-ip>:9002
-spring.cloud.gateway.routes[3].uri=http:// <your-ec2-instance-ip>:8761
-spring.cloud.gateway.routes[4].uri=http:// <your-ec2-instance-ip>:8761
+  ```bash
+  eureka.instance.client.serviceUrl.defaultZone=http:// <your-ec2-instance-ip>:8761/eureka/
+  spring.cloud.gateway.routes[0].uri=http:// <your-ec2-instance-ip>:9001
+  spring.cloud.gateway.routes[1].uri=http:// <your-ec2-instance-ip>:9003
+  spring.cloud.gateway.routes[2].uri=http:// <your-ec2-instance-ip>:9002
+  spring.cloud.gateway.routes[3].uri=http:// <your-ec2-instance-ip>:8761
+  spring.cloud.gateway.routes[4].uri=http:// <your-ec2-instance-ip>:8761
+  ```
 
 3.	/home/ubuntu/Lab_App/Services/location-service/application.properties
-
-spring.datasource.url=jdbc:mysql://<your-db-ec2-instance-ip>:3306/car_rental_db
-spring.datasource.username=root
-spring.datasource.password=demoadmin
-eureka.instance.client.serviceUrl.defaultZone=http:// <your-ec2-instance-ip>:8761/eureka/
+  ```bash
+  spring.datasource.url=jdbc:mysql://<your-db-ec2-instance-ip>:3306/car_rental_db
+  spring.datasource.username=root
+  spring.datasource.password=demoadmin
+  eureka.instance.client.serviceUrl.defaultZone=http:// <your-ec2-instance-ip>:8761/eureka/
+  ```
 
 4.	/home/ubuntu/Lab_App/Services/car-service/application.properties
-
-spring.datasource.url=jdbc:mysql://<your-db-ec2-instance-ip>:3306/car_rental_db
-spring.datasource.username=root
-spring.datasource.password=demoadmin
-eureka.instance.client.serviceUrl.defaultZone=http://<your-ec2-instance-ip>:8761/eureka/
+  ```bash
+  spring.datasource.url=jdbc:mysql://<your-db-ec2-instance-ip>:3306/car_rental_db
+  spring.datasource.username=root
+  spring.datasource.password=demoadmin
+  eureka.instance.client.serviceUrl.defaultZone=http://<your-ec2-instance-ip>:8761/eureka/
+  ```
 
 5.	/home/ubuntu/Lab_App/Services/reservation-service/application.properties
-
-spring.datasource.url=jdbc:mysql://<your-db-ec2-instance-ip>:3306/car_rental_db
-spring.datasource.username=root
-spring.datasource.password=demoadmin
-eureka.instance.client.serviceUrl.defaultZone=http:// <your-ec2-instance-ip>:8761/eureka/
+  ```bash
+  spring.datasource.url=jdbc:mysql://<your-db-ec2-instance-ip>:3306/car_rental_db
+  spring.datasource.username=root
+  spring.datasource.password=demoadmin
+  eureka.instance.client.serviceUrl.defaultZone=http:// <your-ec2-instance-ip>:8761/eureka/
+  ```
 
 - Step 5 – Now run the following commands to run your jar files.
   ```bash
   nohup java -Xms256m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof -jar /home/ubuntu/Lab_App/Services/discovery-service/discovery-service-0.0.1-SNAPSHOT.jar > discovery-service.log 2>&1 &
-
   nohup java -Xms256m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof -jar /home/ubuntu/Lab_App/Services/api-gateway/api-gateway-0.0.1-SNAPSHOT.jar > api-gateway.log 2>&1 &
-
   nohup java -Xms256m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof -jar /home/ubuntu/Lab_App/Services/location-service/location-service-0.0.1-SNAPSHOT.jar > location-service.log 2>&1 &
-  
   nohup java -Xms256m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof -jar /home/ubuntu/Lab_App/Services/car-service/car-service-0.0.1-SNAPSHOT.jar > car-service.log 2>&1 &
-
   nohup java -Xms256m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=./java_pid.hprof -jar /home/ubuntu/Lab_App/Services/reservation-service/reservation-service-0.0.1-SNAPSHOT.jar > reservation-service.log 2>&1 &
   ```
 
