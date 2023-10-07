@@ -21,6 +21,8 @@ The micro-service application which has been designed to facilitate car rental a
 
 ## Architecture Overview
 
+![AIOps Hackathon Lab Application Architecture Diagram](architecture-documents/AIOps%20Hackathon%20Lab%20Application%20Architecture%20Diagram%20v1.png)
+
 ## Getting Started
 
 ### Prerequisites
