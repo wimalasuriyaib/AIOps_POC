@@ -2,7 +2,7 @@
 
 ## Overview
 
-The micro-service application which has been designed to facilitate car rental and reservation management.
+The micro-service based application which has been designed to facilitate car rental and reservation management.
 
 ## Table of Contents
 
@@ -30,6 +30,8 @@ The micro-service application which has been designed to facilitate car rental a
 - **MySQL 8**: [Install MySQL 8](https://dev.mysql.com/downloads/installer/)
 - **Apache Maven 3.8.1**: [Install Apache Maven](https://maven.apache.org/download.cgi)
 
+---
+
 ### Local Development
 
 - Clone this repository:
@@ -54,6 +56,8 @@ To run the backend, follow these steps:
 ### Frontend
 
 Here, I have a frontend application developed with Angular 11 and Node 16. To start the application, the you need to use the `ng serve` command and navigate to `aiops-hackathon-client` and run the command. The app can be accessed using `http://localhost:4200/#/home`.
+
+---
 
 ### AWS Deployment
 
