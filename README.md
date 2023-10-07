@@ -14,6 +14,7 @@ The micro-service based application which has been designed to facilitate car re
       - [Backend](#backend)
       - [Frontend](#frontend)
   - [AWS Deployment](#aws-deployment)
+      - [Prerequisites](#prerequisites)
       - [Backend](#backend)
       - [Frontend](#frontend)
 
@@ -38,11 +39,11 @@ The micro-service based application which has been designed to facilitate car re
   ```bash
   git clone https://github.com/Milinda96/AIOPs_Hackathon_Lab_Application.git
 
-### Setup Database
+#### Setup Database
 
 When configuring the database, navigate to the `database` folder and execute `car_rental_db.sql` to create the database within your local env.
 
-### Backend
+#### Backend
 
 To run the backend, follow these steps:
 
@@ -53,7 +54,7 @@ To run the backend, follow these steps:
 5. Go to `car-service` and run `mvn clean spring-boot:run`.
 6. Finally, go to `reservation-service` and run `mvn clean spring-boot:run`.
 
-### Frontend
+#### Frontend
 
 Here, I have a frontend application developed with Angular 11 and Node 16. To start the application, the you need to use the `ng serve` command and navigate to `aiops-hackathon-client` and run the command. The app can be accessed using `http://localhost:4200/#/home`.
 
@@ -61,6 +62,51 @@ Here, I have a frontend application developed with Angular 11 and Node 16. To st
 
 ### AWS Deployment
 
-### Frontend
+#### Prerequisites
 
-### Backend
+#### Access to EC2 via Putty
+
+To access an AWS EC2 instance using PuTTY on Windows, you need to convert the private key file from the .pem format to PuTTY's .ppk format and then use PuTTY to establish an SSH connection. Here are the steps:
+
+Step 1: Convert .pem Key to .ppk Format
+
+1. Download and install PuTTY if you haven't already. You can get it from the PuTTY website.
+2.	Launch PuTTYgen, which comes with PuTTY, and click the "Load" button.
+3.	In the file dialog, select your .pem private key file.
+4.	Click "Open."
+5.	PuTTYgen will prompt you to convert the key into PuTTY's own format. Click the "Save private key" button.
+6.	Save the key in .ppk format.
+
+Step 2: Configure PuTTY
+
+1.	Launch PuTTY.
+2.	In the "Session" category, enter your EC2 instance's public IP address or DNS hostname in the "Host Name (or IP address)" field.
+3.	In the "Connection" > "Data" category, enter the username used for your EC2 instance. For Ubuntu 20.4, the username is typically ubuntu. For other distributions, check the official documentation for the correct username.
+4.	In the "Connection" > "SSH" > "Auth" category, click the "Browse" button and select the .ppk private key file you created earlier.
+5.	Optionally, you can save this configuration for future use by entering a name in the "Saved Sessions" field and clicking the "Save" button.
+6.	Click "Open" to initiate the SSH connection.
+
+Step 3: Connect to EC2 Instance
+
+1. PuTTY will use the private key to authenticate, and if everything is configured correctly, it should establish a connection to your EC2 instance.
+2. Once connected, you can use the terminal provided by PuTTY to interact with your EC2 instance as if you were using SSH from a Linux terminal.
+
+#### Configure Environment
+
+1.	Update the system packages: Ensure that your instance is up to date by running the following commands:
+`sudo apt update`
+2.	Install necessary software: Install Java, MySQL and Apache Httpd Server.
+
+#### Java 8
+#### Installing OpenJDK 8
+
+1. You can install it by typing the following commands:
+`sudo apt update`
+`sudo apt install openjdk-8-jdk`
+
+2. Verify the installation by checking the Java version:
+`java -version`
+
+#### Frontend
+
+#### Backend
