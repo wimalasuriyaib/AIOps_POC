@@ -1,0 +1,9 @@
+com\aiopshackathon\carreservation\locationservice\model\Location.class
+com\aiopshackathon\carreservation\locationservice\dto\LocationRequest$LocationRequestBuilder.class
+com\aiopshackathon\carreservation\locationservice\LocationServiceApplication.class
+com\aiopshackathon\carreservation\locationservice\repository\LocationRepository.class
+com\aiopshackathon\carreservation\locationservice\service\LocationService.class
+com\aiopshackathon\carreservation\locationservice\controller\LocationController.class
+com\aiopshackathon\carreservation\locationservice\dto\LocationResponse.class
+com\aiopshackathon\carreservation\locationservice\dto\LocationRequest.class
+com\aiopshackathon\carreservation\locationservice\dto\LocationResponse$LocationResponseBuilder.class

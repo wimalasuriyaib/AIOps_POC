@@ -1,0 +1,14 @@
+com\aiopshackathon\carreservation\carservice\dto\LocationResponse$LocationResponseBuilder.class
+com\aiopshackathon\carreservation\carservice\repository\CarRepository.class
+com\aiopshackathon\carreservation\carservice\service\CarService.class
+com\aiopshackathon\carreservation\carservice\dto\CarResponse$CarResponseBuilder.class
+com\aiopshackathon\carreservation\carservice\enums\CarStatus.class
+com\aiopshackathon\carreservation\carservice\dto\CarRequest$CarRequestBuilder.class
+com\aiopshackathon\carreservation\carservice\dto\LocationResponse.class
+com\aiopshackathon\carreservation\carservice\dto\CarRequest.class
+com\aiopshackathon\carreservation\carservice\service\CarServiceException.class
+com\aiopshackathon\carreservation\carservice\CarServiceApplication.class
+com\aiopshackathon\carreservation\carservice\dto\CarResponse.class
+com\aiopshackathon\carreservation\carservice\config\WebClientConfig.class
+com\aiopshackathon\carreservation\carservice\model\Car.class
+com\aiopshackathon\carreservation\carservice\controller\CarController.class
