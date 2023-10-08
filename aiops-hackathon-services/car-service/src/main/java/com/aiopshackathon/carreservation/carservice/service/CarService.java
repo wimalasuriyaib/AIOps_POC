@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -25,6 +26,9 @@ public class CarService {
     private final CarRepository carRepository;
     private static final Logger log = LoggerFactory.getLogger(CarService.class);
     private final WebClient webClient;
+
+    @Value("${location.api.url}")
+    private String locationApiUrl;
 
     public void createCar(CarRequest carRequest) {
         Car car = new Car();
@@ -111,7 +115,7 @@ public class CarService {
 
     private LocationResponse getLocationDetails(String locationUuid) {
         return webClient.get()
-                .uri("http://localhost:9003/api/locations/{locationUuid}", locationUuid)
+                .uri(locationApiUrl + "/api/locations/{locationUuid}", locationUuid)
                 .retrieve()
                 .bodyToMono(LocationResponse.class)
                 .block();
