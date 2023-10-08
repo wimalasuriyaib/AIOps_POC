@@ -172,8 +172,6 @@ Step 3: Connect to EC2 Instance
   ```bash
   SELECT user, host FROM mysql.user;
   UPDATE mysql.user SET Host = '%' WHERE User = 'root';
-  GRANT ALL PRIVILEGES ON *.* TO ‘root’@’%’ GRANT OPTION;
-  FLUSH PRIVILEGES;
   ```
 
   Then run the following ALTER USER command to change the root user’s authentication method to one that uses a password.
