@@ -1,0 +1,99 @@
+@import "custom-app/custom/functions";
+@import "custom-app/bootstrap/functions";
+
+@import "custom-app/custom/variables";
+@import "custom-app/bootstrap/variables";
+
+@import "custom-app/custom/mixins";
+@import "custom-app/bootstrap/mixins";
+
+// Bootstrap components
+
+@import "custom-app/bootstrap/root";
+@import "custom-app/bootstrap/reboot";
+@import "custom-app/bootstrap/type";
+@import "custom-app/bootstrap/images";
+@import "custom-app/bootstrap/code";
+@import "custom-app/bootstrap/grid";
+@import "custom-app/bootstrap/tables";
+@import "custom-app/bootstrap/forms";
+@import "custom-app/bootstrap/buttons";
+@import "custom-app/bootstrap/transitions";
+@import "custom-app/bootstrap/dropdown";
+@import "custom-app/bootstrap/button-group";
+@import "custom-app/bootstrap/input-group";
+@import "custom-app/bootstrap/custom-forms";
+@import "custom-app/bootstrap/nav";
+@import "custom-app/bootstrap/navbar";
+@import "custom-app/bootstrap/card";
+@import "custom-app/bootstrap/breadcrumb";
+@import "custom-app/bootstrap/pagination";
+@import "custom-app/bootstrap/badge";
+@import "custom-app/bootstrap/jumbotron";
+@import "custom-app/bootstrap/alert";
+@import "custom-app/bootstrap/progress";
+@import "custom-app/bootstrap/media";
+@import "custom-app/bootstrap/list-group";
+@import "custom-app/bootstrap/close";
+@import "custom-app/bootstrap/modal";
+@import "custom-app/bootstrap/tooltip";
+@import "custom-app/bootstrap/popover";
+@import "custom-app/bootstrap/carousel";
+@import "custom-app/bootstrap/utilities";
+@import "custom-app/bootstrap/print";
+
+// Custom components
+
+@import "custom-app/custom/alerts.scss";
+@import "custom-app/custom/buttons.scss";
+@import "custom-app/custom/dropdown.scss";
+@import "custom-app/custom/footer.scss";
+@import "custom-app/custom/forms.scss";
+@import "custom-app/custom/images.scss";
+@import "custom-app/custom/modal.scss";
+@import "custom-app/custom/navbar.scss";
+@import "custom-app/custom/type.scss";
+@import "custom-app/custom/icons.scss";
+@import "custom-app/custom/tables";
+@import "custom-app/custom/checkboxes-radio";
+@import "custom-app/custom/fixed-plugin";
+@import "custom-app/custom/pagination.scss";
+@import "custom-app/custom/misc.scss";
+@import "custom-app/custom/rtl.scss";
+@import "custom-app/custom/input-group.scss";
+@import "custom-app/custom/example-pages.scss";
+@import "custom-app/custom/progress.scss";
+@import "custom-app/custom/badge.scss";
+@import "custom-app/custom/pills.scss";
+@import "custom-app/custom/tabs.scss";
+@import "custom-app/custom/info-areas.scss";
+
+// Sections
+@import "custom-app/custom/sections.scss";
+
+// Vendor / Plugins
+
+@import "custom-app/custom/vendor/plugin-perfect-scrollbar.scss";
+@import "custom-app/custom/vendor/plugin-animate-bootstrap-notify.scss";
+@import "custom-app/custom/vendor/plugin-bootstrap-switch.scss";
+@import "custom-app/custom/vendor/plugin-nouislider.scss";
+@import "custom-app/custom/vendor/plugin-datetimepicker.scss";
+
+// Cards
+
+@import "custom-app/custom/card";
+@import "custom-app/custom/cards/card-chart";
+@import "custom-app/custom/cards/card-map";
+@import "custom-app/custom/cards/card-user";
+@import "custom-app/custom/cards/card-task";
+@import "custom-app/custom/cards/card-plain";
+@import "custom-app/custom/cards/card-register";
+@import "custom-app/custom/cards/card-stats";
+@import "custom-app/custom/cards/card-chart";
+
+// Angular changes
+@import "custom-app/angular/tabs";
+@import "custom-app/angular/pills";
+@import "custom-app/angular/alerts";
+@import "custom-app/angular/datepicker";
+@import "custom-app/angular/example-pages";
