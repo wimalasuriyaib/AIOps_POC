@@ -33,3 +33,6 @@ spec:
   languages:
     - jvm
   type: custom
+  applicationRole: backend 
+  accessibleViaInternet: Yes
+  AnyOtherDetails:  Yes we can add anything else
