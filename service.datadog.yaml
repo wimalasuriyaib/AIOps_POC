@@ -6,6 +6,7 @@ metadata:
   displayName: Location Service
   tags:
     - location
+    - Publicavailable :  yess
   owner: Location_Team
   links:
     - name: Code
