@@ -5,8 +5,8 @@ metadata:
   description: Location App
   displayName: Location Service
   tags:
-    - location
-    - WebApp
+    - location:Colombo
+    - WebApp:FrontApp
   owner: Location_Team
   links:
     - name: Code
