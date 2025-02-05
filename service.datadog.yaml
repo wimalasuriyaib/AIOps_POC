@@ -34,3 +34,6 @@ spec:
   languages:
     - jvm
   type: custom
+  extensions:
+  Test.com/LocationApp:
+    isApplicationPubliclyAccessible: true
