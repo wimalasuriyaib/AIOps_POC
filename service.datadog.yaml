@@ -6,8 +6,6 @@ metadata:
   displayName: Location Service
   tags:
     - location
-    - role: backend
-    - accessible_via_internet: yess
   owner: Location_Team
   links:
     - name: Code
