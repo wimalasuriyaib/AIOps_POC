@@ -6,6 +6,7 @@ metadata:
   displayName: Location Service
   tags:
     - location
+    - WebApp
     - Publicavailable :  yess
   owner: Location_Team
   links:
