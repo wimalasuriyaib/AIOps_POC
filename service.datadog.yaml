@@ -6,8 +6,8 @@ metadata:
   displayName: Location Service
   tags:
     - location
-    - role: backend   # Use tag for application role
-    - accessible_via_internet: yes  # Use tag for internet access
+    - role: backend
+    - accessible_via_internet: yess
   owner: Location_Team
   links:
     - name: Code
