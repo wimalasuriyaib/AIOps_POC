@@ -36,4 +36,4 @@ spec:
   type: custom
   extensions:
   Test.com/LocationApp:
-    isApplicationPubliclyAccessible: true
+    isApplicationPubliclyAccessible: yespossible
