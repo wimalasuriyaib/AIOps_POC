@@ -7,6 +7,8 @@ metadata:
   tags:
     - location:Colombo
     - WebApp:FrontApp
+    - BusinessCritical:Medium
+    - Hosting:Azure
   owner: Location_Team
   links:
     - name: Code
@@ -35,5 +37,9 @@ spec:
     - jvm
   type: custom
 extensions:
+  Test.com/AppDef:
+    isApplicationPubliclyAccessible: yess
+    RTO: 3 hours
+    RPO: 1 hours
   Test.com/LocationApp:
     isApplicationPubliclyAccessible: yespossible
